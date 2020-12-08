@@ -2,7 +2,8 @@
 
 ## 启动命令
 cd work/jvm-optimization
-java -XX:+PrintGCTimeStamps -XX:+PrintGCDetails -Xloggc:/ai/ailab/User/chenjingyu/logs/jvm-optimization.log  -jar target/jvm-0.0.1-SNAPSHOT.jar
+
+java -Xms4g -Xmx4g -Xmn3g -XX:+PrintGCTimeStamps -XX:+PrintGCDetails -Xloggc:/ai/ailab/User/chenjingyu/logs/jvm-optimization.log -jar target/jvm-0.0.1-SNAPSHOT.java
 
 ## 工具
 
@@ -25,6 +26,9 @@ ab -c 10 -n 100000 http://127.0.0.1:8080/buy
 ### GC 命令
 jcmd pid VM.flags  可以查看到相关的设置参数
 jstat -gc pid interval 查看每次 GC 之后，具体每一个分区的内存使用率变化情况。
+
+### GC日志查看工具
+https://sourceforge.net/projects/gcviewer/
 
 ## 调优的方案
 1. 调整堆内存空间减少 FullGC 

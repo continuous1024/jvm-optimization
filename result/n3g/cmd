@@ -1,6 +1,6 @@
  java -Xms4g -Xmx4g -Xmn3g
   -XX:+PrintGCTimeStamps -XX:+PrintGCDetails -Xloggc:/ai/ailab/User/chenjingyu/logs/jvm-optimization.log 
-  -jar target/jvm-0.0.1-SNAPSHOT.ja
+  -jar target/jvm-0.0.1-SNAPSHOT.jar
 
 
 调整年轻代减少 MinorGC：
