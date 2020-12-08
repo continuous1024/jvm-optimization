@@ -1,0 +1,35 @@
+Server Software:        
+Server Hostname:        127.0.0.1
+Server Port:            8080
+
+Document Path:          /buy
+Document Length:        7 bytes
+
+Concurrency Level:      5000
+Time taken for tests:   31.393 seconds
+Complete requests:      100000
+Failed requests:        0
+Total transferred:      13900000 bytes
+HTML transferred:       700000 bytes
+Requests per second:    3185.39 [#/sec] (mean)
+Time per request:       1569.668 [ms] (mean)
+Time per request:       0.314 [ms] (mean, across all concurrent requests)
+Transfer rate:          432.39 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0  798 2057.5     33   15239
+Processing:     6  226 352.9    168    9524
+Waiting:        5  208 347.4    154    9374
+Total:         12 1024 2219.8    253   22795
+
+Percentage of the requests served within a certain time (ms)
+  50%    253
+  66%   1071
+  75%   1184
+  80%   1245
+  90%   3075
+  95%   3285
+  98%   7456
+  99%  15747
+ 100%  22795 (longest request)
