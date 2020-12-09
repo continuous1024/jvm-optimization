@@ -3,7 +3,9 @@
 ## 启动命令
 cd work/jvm-optimization
 
-java -Xms4g -Xmx4g -Xmn3g -XX:+PrintGCTimeStamps -XX:+PrintGCDetails -Xloggc:/ai/ailab/User/chenjingyu/logs/jvm-optimization.log -jar target/jvm-0.0.1-SNAPSHOT.java
+java -Xms4g -Xmx4g -Xmn3g 
+-XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/ai/ailab/User/chenjingyu/logs/heapdump.hprof
+-XX:+PrintGCTimeStamps -XX:+PrintGCDetails -Xloggc:/ai/ailab/User/chenjingyu/logs/jvm-optimization.log -jar target/jvm-0.0.1-SNAPSHOT.java
 
 ## 工具
 
@@ -37,3 +39,11 @@ https://sourceforge.net/projects/gcviewer/
 通过调整堆内存大小，我们已经提升了整体的吞吐量，降低了响应时间。那还有优化空间吗？我们还可以将年轻代设置得大一些，从而减少一些 MinorGC
 3. 设置 Eden、Survivor 区比例：在 JVM 中，如果开启 AdaptiveSizePolicy，则每次 GC 后都会重新计算 Eden、From Survivor 和 To Survivor 区的大小，计算依据是 GC 过程中统计的 GC 时间、吞吐量、内存占用量。这个时候 SurvivorRatio 默认设置的比例会失效。
 在 JDK1.8 中，默认是开启 AdaptiveSizePolicy 的，我们可以通过 -XX:-UseAdaptiveSizePolicy 关闭该项配置，或显示运行 -XX:SurvivorRatio=8 将 Eden、Survivor 的比例设置为 8:2。大部分新对象都是在 Eden 区创建的，我们可以固定 Eden 区的占用比例，来调优 JVM 的内存分配性能。
+
+## 内存溢出排查
+
+## 工具
+
+### top
+
+### MAT

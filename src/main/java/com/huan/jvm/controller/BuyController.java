@@ -1,4 +1,4 @@
-package com.huan.jvm;
+package com.huan.jvm.controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
